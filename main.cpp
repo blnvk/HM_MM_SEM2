@@ -20,7 +20,6 @@ public:
 };
 
 int main() {
-    point a;
-    a.print();
+    
     return 0;
 }
