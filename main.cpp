@@ -1,21 +1,26 @@
 #include <iostream>
 
-class point{
-public:
+class point {
+
+private:
     float x;
     float y;
-
+public:
     void print() {
         std::cout << "x " << x << "\ty " << y << std::endl;
+    }
+
+    float Get_x_data () {
+        return x;
+    }
+
+    void Set_x_value (float value_x) {
+        x = value_x;
     }
 };
 
 int main() {
     point a;
-    a.x = 1;
-    a.y = 0.5;
-
     a.print();
-
     return 0;
 }
