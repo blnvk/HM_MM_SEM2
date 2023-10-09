@@ -7,6 +7,7 @@ private:
     float y;
 public:
     void print() {
+
         std::cout << "x " << x << "\ty " << y << std::endl;
     }
 
