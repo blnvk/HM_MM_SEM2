@@ -17,6 +17,7 @@ private:
          if (b == 0) return a;
          return frac_nod(b, a % b);
      };
+
      rational reduce() { //функция сокращения дроби
          int a = max(abs(chisl), abs(znam));
          int sgn;
@@ -79,20 +80,74 @@ public:
         return temp.reduce();
     };
 
+    bool operator == (const rational & other){
+        rational tmp = *this;
+        rational tmp0 = other;
+        rational tmp1 = tmp.reduce();
+        rational tmp2 = tmp0.reduce();
+        if (tmp1.znam == tmp2.znam && tmp1.chisl == tmp2.chisl) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    bool operator != (const rational & other) {
+        rational tmp = *this;
+        rational tmp0 = other;
+        rational tmp1 = tmp.reduce();
+        rational tmp2 = tmp0.reduce();
+        if (tmp1.znam == tmp2.znam && tmp1.chisl == tmp2.chisl) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    bool operator >(const rational & other){
+        rational tmp = *this;
+        rational tmp0 = other;
+        tmp.chisl *= tmp0.znam;
+        tmp0.chisl *= tmp.znam;
+        return (tmp.chisl > tmp0.chisl);
+    }
+    bool operator <(const rational & other){
+        rational tmp = *this;
+        rational tmp0 = other;
+        tmp.chisl *= tmp0.znam;
+        tmp0.chisl *= tmp.znam;
+        return (tmp.chisl < tmp0.chisl);
+    }
+    bool operator <=(const rational & other){
+        rational tmp = *this;
+        rational tmp0 = other;
+        tmp.chisl *= tmp0.znam;
+        tmp0.chisl *= tmp.znam;
+        return (tmp.chisl <= tmp0.chisl);
+    }
+    bool operator >=(const rational & other){
+        rational tmp = *this;
+        rational tmp0 = other;
+        tmp.chisl *= tmp0.znam;
+        tmp0.chisl *= tmp.znam;
+        return (tmp.chisl >= tmp0.chisl);
+    }
+
 };
 
 int main(){
-    rational a(3, 2);
-    rational b(1, 2);
+    rational a(1, 2);
+    rational b(2, 4);
 
-    rational c = a / b;
-
+    rational c = a + b;
+    bool result = a >= b;
+    std::cout << result << std::endl;
     b.print();
     a.print();
     c.print();
+
+
     return 0;
 }
-
-
-
 
