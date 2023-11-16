@@ -1,27 +1,16 @@
 #include <iostream>
-
-class point {
-
-private:
-    float x;
-    float y;
-public:
-    void print() {
-
-        std::cout << "x " << x << "\ty " << y << std::endl;
-    }
-
-    float Get_x_data () {
-        return x;
-    }
-
-    void Set_x_value (float value_x) {
-        x = value_x;
-    }
-};
+#include <cmath>
+#include "complex.cpp"
 
 int main() {
-    point a;
+    complex_numbers a(3, 4);
+    complex_numbers b(4, 7);
     a.print();
+    b.print();
+    float lenght = a.absolute();
+    float lenght1 = b.absolute();
+    std::cout << "abs of a "<< lenght << "\t";
+    std::cout << "abs of b " << lenght1 << std::endl;
+
     return 0;
 }
