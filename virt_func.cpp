@@ -18,7 +18,7 @@ public:
             arr[i] = 0;
         }
     }
-    virtual array operator +(const array & other) {
+    virtual array operator +(const array & other) { //переписать как нормальный метод а не как перегрущку
         for (int i = 0; i < N; i++) {
             this->arr[i] += other.arr[i];
         }
@@ -28,6 +28,8 @@ public:
 class money: public array {
 private:
 public:
+
+
     money(int N): array(N) {};
     void input(){
         std::cout << "Put your moneyyyy" << std::endl;
