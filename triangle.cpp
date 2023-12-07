@@ -47,7 +47,7 @@ public:
     }
     void print()
     {
-      std::cout << square << std::endl; //функция вывода
+      std::cout << "Square is equal " << square << std::endl; //функция вывода
     }
 };
 int main() {
